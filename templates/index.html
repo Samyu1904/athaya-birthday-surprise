@@ -1,0 +1,130 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>A Special Day | Athaya</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <div id="particles"></div>
+
+    <!-- OPENING -->
+    <section class="hero" id="hero">
+
+        <div class="hero-glow"></div>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">A CELEBRATION OF YOU</p>
+
+            <div class="ornament">✦ &nbsp; ✧ &nbsp; ✦</div>
+
+            <h1>
+                For someone<br>
+                <span>extraordinary</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                A little collection of moments, love,<br>
+                laughter, and memories made just for you.
+            </p>
+
+            <button class="primary-button" id="surpriseBtn">
+                Open Your Surprise <span>↗</span>
+            </button>
+
+            <p class="scroll-note">MADE WITH LOVE</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- BIRTHDAY MESSAGE -->
+    <section class="reveal-section" id="reveal">
+
+        <div class="reveal-content">
+
+            <p class="eyebrow">TODAY IS ALL ABOUT YOU</p>
+
+            <h2>
+                Happy Birthday,<br>
+                <span>Athaya</span>
+            </h2>
+
+            <p class="message">
+                Some people make life beautiful simply by being in it.
+                You are one of those people.
+                Today, we celebrate you — your kindness, your laughter,
+                your warmth, and all the wonderful memories you've given us.
+            </p>
+
+            <button class="primary-button" id="memoriesBtn">
+                Let's Relive Our Memories <span>→</span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PHOTO FILM -->
+    <section id="gallery" class="film-section">
+
+        <div id="film-stage" class="film-stage"></div>
+
+    </section>
+
+
+    <!-- COLLAGE -->
+    <section id="collage-section" class="collage-section">
+
+        <div id="memory-collage" class="memory-collage"></div>
+
+    </section>
+
+
+    <!-- ENDING -->
+    <section id="final-screen" class="final-screen">
+
+        <div class="final-content">
+
+            <p class="eyebrow">AND THE MEMORIES KEEP GROWING</p>
+
+            <h1>
+                Happy Birthday<br>
+                <span>Athaya</span>
+            </h1>
+
+            <p>
+                May your life always be filled with the same love,
+                happiness, and warmth that you bring to everyone around you.
+            </p>
+
+            <button class="primary-button" id="replayBtn">
+                Relive This Again ↻
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPORTANT: SEND PHOTO LIST FROM FLASK TO JAVASCRIPT -->
+    <script>
+        window.BIRTHDAY_PHOTOS = {{ photos | tojson }};
+        console.log("Flask photos:", window.BIRTHDAY_PHOTOS);
+    </script>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
